@@ -1,8 +1,8 @@
 from fastapi import FastAPI
+from app.routers import cards
 
 app = FastAPI()
 
-@app.get("/ping", tags=["Teste"])
-def test():
-    return {"messase": "Pong"}
+app.include_router(cards.router)
+
 
